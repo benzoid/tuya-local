@@ -1,0 +1,276 @@
+# 1: false (=standby), true (=on)
+# 2: 110: set temperature (x10) temp_set
+# 3: 175: current temperature (x10) temp_current
+# 5: Standby, Manual, Program: mode
+# 7: true, false: lock
+# 8: true, false: sound
+# 11: heating, standby: actually heating or not work_state
+# 101: -5: Temperature calibration
+# 102: 115: eco temperature (x10)
+# 103: true: open window detection
+# 105: 210: Comfort temperature
+# 106: 60: AF temperature
+# 111: true: ?Limit mode?
+# 113: 0: today's energy (x10) kWh
+# 116: cancel, 1h, 2h: boost setting
+# 118: 220: boost temperature (x10)
+# 119: 118: boost time remaining (min)
+# 120: 2: energy consumption (x10) kWh
+# 121: false: ?
+
+# 4 in mapping: eco (Enum): mode -- instead of 104?
+
+name: Panel heater
+products:
+  - id: ui2crhdararfq16p
+    manufacturer: Solaire
+    model: Lyndo WIFI
+entities:
+  - entity: climate
+    translation_only_key: heater
+    dps:
+      - id: 1
+        name: hvac_mode
+        type: boolean
+        mapping:
+          - dps_val: true
+            value: "heat"
+          - dps_val: false
+            value: "off"
+      - id: 2
+        name: temperature
+        type: integer
+        unit: C
+        range:
+          min: 50
+          max: 350
+        mapping:
+          - scale: 10
+            step: 5
+      - id: 3
+        name: current_temperature
+        type: integer
+        range:
+          min: 0
+          max: 500
+        mapping:
+          - scale: 10
+            step: 5
+      - id: 11
+        name: hvac_action
+        type: string
+        mapping:
+          - dps_val: "standby"
+            value: idle
+          - dps_val: "heating"
+            value: heating
+# is this right?
+      - id: 104
+        name: preset_mode
+        type: string
+        mapping:
+          - dps_val: "comfort"
+            value: comfort
+          - dps_val: "ECO"
+            value: eco
+          - dps_val: "AF"
+            value: away
+  - entity: select
+    name: Mode
+    icon: "mdi:radiator"
+    category: config
+    dps:
+      - id: 5
+        name: option
+        type: string
+        mapping:
+          - dps_val: "Standby"
+            value: standby
+          - dps_val: "Manual"
+            value: manual
+          - dps_val: "Program"
+            value: program
+          - dps_val: "Limit"
+            value: limit
+  - entity: number
+    name: Temperature calibration
+    category: config
+    class: temperature
+    dps:
+      - id: 101
+        type: integer
+        name: value
+        unit: C
+        range:
+          min: -50
+          max: 50
+        mapping:
+          scale: 10
+          step: 5
+  - entity: number
+    name: Eco temperature
+    category: config
+    class: temperature
+    unit: C
+    range:
+      min: 70
+      max: 235
+    dps:
+      - id: 102
+        category: config
+        mapping:
+          - scale: 10
+            step: 5
+  - entity: number
+    name: Comfort temperature
+    category: config
+    class: temperature
+    unit: C
+    range:
+      min: 75
+      max: 300
+    dps:
+      - id: 105
+        category: config
+        mapping:
+          - scale: 10
+            step: 5
+  - entity: number
+    name: Away temperature
+    category: config
+    class: temperature
+    unit: C
+    range:
+      min: 50
+      max: 170
+    dps:
+      - id: 106
+        category: config
+        mapping:
+          - scale: 10
+            step: 5
+  - entity: select
+    translation_key: timer
+    category: config
+    dps:
+      - id: 116
+        type: string
+        name: option
+        mapping:
+          - dps_val: cancel
+            value: cancel
+          - dps_val: "1h"
+            value: 1h
+          - dps_val: "2h"
+            value: 2h
+  - entity: number
+    name: Boost temperature
+    category: config
+    class: temperature
+    unit: C
+    range:
+      min: 50
+      max: 350
+    dps:
+      - id: 118
+        mapping:
+          - scale: 10
+            step: 5
+  - entity: sensor
+    translation_key: time_remaining
+    class: duration
+    dps:
+      - id: 119
+        type: integer
+        name: sensor
+        unit: min
+  - entity: lock
+    translation_key: child_lock
+    category: config
+    dps:
+      - id: 7
+        type: boolean
+        name: lock
+  - entity: switch
+    name: Open window detection
+    icon: "mdi:window-open-variant"
+    category: config
+    dps:
+      - id: 103
+        type: boolean
+        name: switch
+  - entity: switch
+    name: Sound
+    icon: "mdi:music-note"
+    category: config
+    dps:
+      - id: 8
+        type: boolean
+        name: switch
+  - entity: sensor
+    name: Energy today
+    class: energy
+    dps:
+      - id: 113
+        name: sensor
+        type: integer
+        unit: kWh
+        optional: true
+        mapping:
+          - scale: 10
+  - entity: sensor
+    name: Total energy
+    class: energy
+    dps:
+      - id: 120
+        name: sensor
+        type: integer
+        unit: kWh
+        class: total_increasing
+        optional: true
+        mapping:
+          - scale: 10
+  - entity: binary_sensor
+    name: Limit
+    category: diagnostic
+    dps:
+      - id: 111
+        name: sensor
+        mapping:
+          - dps_val: true
+            value: true
+          - dps_val: false
+            value: false
+  - entity: button
+    name: Energy reset
+    category: config
+    class: restart
+    dps:
+      - id: 121
+        name: button
+        type: boolean
+        optional: true
+
+
+
+# - entity: light
+#     translation_key: display
+#     category: config
+#     dps:
+#       - id: ?
+#         type: boolean
+#         name: switch
+# - entity: binary_sensor
+#   class: problem
+#   category: diagnostic
+#   dps:
+#     - id: ?
+#       type: bitfield
+#       name: sensor
+#       mapping:
+#         - dps_val: 0
+#           value: false
+#         - value: true
+#     - id: ?
+#       type: bitfield
+#       name: fault_code
