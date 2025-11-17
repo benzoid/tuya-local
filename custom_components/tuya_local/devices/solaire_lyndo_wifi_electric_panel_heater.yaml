@@ -18,6 +18,8 @@
 # 120: 2: energy consumption (x10) kWh
 # 121: false: ?
 
+# 4 in mapping: eco (Enum): mode -- instead of 104?
+
 name: Panel heater
 products:
   - id: ui2crhdararfq16p
