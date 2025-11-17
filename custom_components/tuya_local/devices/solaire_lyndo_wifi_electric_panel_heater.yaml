@@ -98,8 +98,8 @@ entities:
     class: temperature
     dps:
       - id: 101
-        type: integer
         name: value
+        type: integer
         unit: C
         range:
           min: -50
@@ -117,7 +117,7 @@ entities:
       max: 235
     dps:
       - id: 102
-        category: config
+        type: integer
         mapping:
           - scale: 10
             step: 5
@@ -131,7 +131,7 @@ entities:
       max: 300
     dps:
       - id: 105
-        category: config
+        type: integer
         mapping:
           - scale: 10
             step: 5
@@ -145,7 +145,7 @@ entities:
       max: 170
     dps:
       - id: 106
-        category: config
+        type: integer
         mapping:
           - scale: 10
             step: 5
@@ -173,6 +173,7 @@ entities:
       max: 350
     dps:
       - id: 118
+        type: integer
         mapping:
           - scale: 10
             step: 5
@@ -236,6 +237,7 @@ entities:
     dps:
       - id: 111
         name: sensor
+        type: boolean
         mapping:
           - dps_val: true
             value: true
