@@ -786,7 +786,11 @@
                     "empty": "Пустой",
                     "missing": "Отсутствует",
                     "formatting": "Форматирование",
-                    "unformatted": "Не отформатировано"
+                    "unformatted": "Не отформатировано",
+                    "maintenance_required": "Требуется техническое обслуживание",
+                    "dry": "Сухой",
+                    "comfortable": "Комфортный",
+                    "damp": "Влажный"
                 }
             },
             "time_remaining": {

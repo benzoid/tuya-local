@@ -787,7 +787,11 @@
                     "empty": "Leer",
                     "missing": "Fehlend",
                     "formatting": "Formatieren",
-                    "unformatted": "Unformatiert"
+                    "unformatted": "Unformatiert",
+                    "maintenance_required": "Wartung erforderlich",
+                    "dry": "Trocken",
+                    "comfortable": "Bequem",
+                    "damp": "Feucht"
                 }
             },
             "time_remaining": {

@@ -787,7 +787,11 @@
                     "empty": "Порожній",
                     "missing": "Відсутній",
                     "formatting": "Форматування",
-                    "unformatted": "Неформатований"
+                    "unformatted": "Неформатований",
+                    "maintenance_required": "Потрібне обслуговування",
+                    "dry": "Сухий",
+                    "comfortable": "Комфортний",
+                    "damp": "Вогкий"
                 }
             },
             "time_remaining": {

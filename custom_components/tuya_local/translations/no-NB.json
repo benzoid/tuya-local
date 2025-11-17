@@ -787,7 +787,11 @@
                     "empty": "Tom",
                     "missing": "Manglende",
                     "formatting": "Formatering",
-                    "unformatted": "Uformaterte"
+                    "unformatted": "Uformaterte",
+                    "maintenance_required": "Vedlikehold kreves",
+                    "dry": "Tørr",
+                    "comfortable": "Komfortabel",
+                    "damp": "Fuktig"
                 }
             },
             "time_remaining": {

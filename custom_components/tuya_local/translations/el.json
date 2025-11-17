@@ -786,7 +786,11 @@
                     "empty": "Άδειο",
                     "missing": "Ελλιπές",
                     "formatting": "Μορφοποίηση",
-                    "unformatted": "Μη μορφοποιημένο"
+                    "unformatted": "Μη μορφοποιημένο",
+                    "maintenance_required": "Απαιτείται συντήρηση",
+                    "dry": "Στεγνό",
+                    "comfortable": "Άνετο",
+                    "damp": "Υγρό"
                 }
             },
             "time_remaining": {

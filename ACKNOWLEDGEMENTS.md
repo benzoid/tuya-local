@@ -68,7 +68,7 @@ Further device support has been made with the assistance of users. Please consid
 - [PaulJoosten](https://github.com/PaulJoosten) for assistance in figuring out the similarities and capabilities of different Eurom heaters.
 - [jdavidr17](https://github.com/jdavidr17) for assistance with discovering timer parameters for switches.
 - [miannelli516](https://github.com/miannelli516) for assistance with TR9B thermostats.
-- [edwinyoo44](https://github.com/edwinyoo44) for contributing support for JJPro JPD01 and JPD02 dehumidifiers and assistance with Poiema One purifiers.
+- [edwinyoo44](https://github.com/edwinyoo44) for contributing support for JJPro JPD01 and JPD02 dehumidifiers, EASTtime D401 water purifier and assistance with Poiema One purifiers.
 - [mpetcuRO](https://github.com/mpetcuRO) for assistance with Hysen HT08WE-2 thermostats.
 - [Paul-C-S](https://github.com/Paul-C-S) for assistance with Ecostrad Accent iQ heaters and contributing support for iQ Ceramic radiators and INOW heating elements.
 - [WildeRNS](https://github.com/WildeRNS) for assistance with Nashone MTS-700-WB thermostat smartplugs, SmartMCB Energy meter, BlitzWolf BW-IS6 alarm panels.
@@ -1114,4 +1114,10 @@ Further device support has been made with the assistance of users. Please consid
 - [sajtdavid](https://github.com/sajtdavid) for contributing support for CO2v1 carbon dioxide sensor.
 - [dermocles9308](https://github.com/dermocles9308) for assisting with support for Tongou QCB2-100 3 phase circuit breaker.
 - [bvweerd](https://github.com/bvweerd) for contributing improvements to Fararo pet feeder.
-- [dtaylor7](https://github.com/dtaylor7) for contributing support for eTowel Mini04 plus towel rail thermostat.
+- [dtaylor7](https://github.com/dtaylor7) for contributing support for eTowel Mini04 plus towel rail thermostat and WarmeHaus thermostatic towel rail element.
+- [StrandmonYellow](https://github.com/StrandmonYellow) for assisting with support for Amenzo dishwasher.
+- [rbswift](https://github.com/rbswift) for assisting with support for Intaflo Intabloc air-water heat pump.
+- [evilpig](https://github.com/evilpig) for assisting with support for Homvana H111S humidifier.
+- [veista](https://github.com/veista) for contributing improvements to Immax Neo Lite weather station.
+- [DavidRomao](https://github.com/DavidRomao) for contributing support for Jocel JCT007452 heater, merged into compatible Lehmann config.
+- [phiten](https://github.com/phiten) for assisting with support for FeelNeedy P-LFP01 camera pet feeder.

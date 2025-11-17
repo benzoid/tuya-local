@@ -786,7 +786,11 @@
                     "empty": "Empty",
                     "missing": "Missing",
                     "formatting": "Formatting",
-                    "unformatted": "Unformatted"
+                    "unformatted": "Unformatted",
+                    "maintenance_required": "Maintenance required",
+                    "dry": "Dry",
+                    "comfortable": "Comfortable",
+                    "damp": "Damp"
                 }
             },
             "time_remaining": {

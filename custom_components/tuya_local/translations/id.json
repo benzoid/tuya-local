@@ -1,3 +1,4 @@
+
 {
     "title": "Tuya Local",
     "config": {
@@ -786,7 +787,11 @@
                     "empty": "Kosong",
                     "missing": "Hilang",
                     "formatting": "Memformat",
-                    "unformatted": "Belum diformat"
+                    "unformatted": "Belum diformat",
+                    "maintenance_required": "Perawatan diperlukan",
+                    "dry": "Kering",
+                    "comfortable": "Nyaman",
+                    "damp": "Lembab"
                 }
             },
             "time_remaining": {

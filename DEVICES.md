@@ -74,6 +74,7 @@
 - Vonroc GPH-XA-HEMAN heater
 - VTA+ Axial fan heater
 - Wärme Designer wall panel heater
+- WarmeHaus AFD-02-TJ thermostatic towel rain element
 - Wetair WCH-750 heater
 
 ### Air Conditioners / Heat pumps
@@ -174,6 +175,7 @@
 - Giatsu VAW 2 heat pump water heater
 - HY multifunctional heat pump V1.2
 - Hydrotherm Dynamic/X8 heat pump hot water systems (Gen 5 and 6)
+- Intaflo Intabloc DC Inverter air-water heat pump
 - ITS-4.5HD super water heat pump
 - Koi Duo HTW-TD-080KOID
 - Lohxa SR208C solar water heating controller
@@ -442,6 +444,7 @@
 - Clean Air Optima CA-604B, CA-605B humidifiers
 - Clofte Duo 400 humidifier
 - Eanons QT-JS2014 purifying humidifier
+- Homvana H111S humidifier
 - Inkbird IHC-200 humidity controller
 - Klarta Humea humidifier
 - Kyvol EA200 humidifier
@@ -472,6 +475,7 @@
 
 - Aeno EK1S and EK7S kettles
 - Aeno KS1S kitchen scale
+- Amenzo dishwasher
 - Anko 1.7L smart kettle
 - BlitzHome BH-CDW1 dishwasher
 - Ciarra CBCS4850 range hood
@@ -966,6 +970,7 @@ port and password.
 - Duoqu Neo-A cat litter box
 - Els Pet Spaceship pet litter box
 - Faroro PF50 pet feeder
+- FeelNeedy P-LFP01 camera pet feeder
 - Fukumaru AF01-W pet feeder
 - Hapaw pet fountain
 - HoneyGuardian S56 pet feeder
@@ -1060,6 +1065,7 @@ port and password.
 - CT20W PIR motion detector
 - Dienmern DM165A noise meter
 - Digma DiSense G1 gas leak detector
+- EASTtime D401 water purifier
 - E Chief SGH01 hydroponic planter
 - EM3390TF weather station (tested with Viflykoo branded device, probably identical to the same model number branded as Uzoli, Jely and others)
 - Emax EM3378 Weather Station (selling as Hiper P1 and other rebrands)

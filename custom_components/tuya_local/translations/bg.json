@@ -787,7 +787,11 @@
                     "empty": "Празен",
                     "missing": "Липсва",
                     "formatting": "Форматиране",
-                    "unformatted": "Неформатиран"
+                    "unformatted": "Неформатиран",
+                    "maintenance_required": "Изисква се поддръжка",
+                    "dry": "Сухо",
+                    "comfortable": "Удобно",
+                    "damp": "Влажно"
                 }
             },
             "time_remaining": {

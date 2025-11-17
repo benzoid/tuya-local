@@ -788,7 +788,11 @@
                     "empty": "خالی",
                     "missing": "غائب",
                     "formatting": "فارمیٹنگ",
-                    "unformatted": "غیر شکل بند"
+                    "unformatted": "غیر شکل بند",
+                    "maintenance_required": "مینٹیننس کی ضرورت ہے",
+                    "dry": "خشک",
+                    "comfortable": "آرام دہ",
+                    "damp": "نم"
                 }
             },
             "time_remaining": {
