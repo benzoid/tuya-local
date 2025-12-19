@@ -1,25 +1,3 @@
-# 1: false (=standby), true (=on)
-# 2: 110: set temperature (x10) temp_set
-# 3: 175: current temperature (x10) temp_current
-# 5: Standby, Manual, Program: mode
-# 7: true, false: lock
-# 8: true, false: sound
-# 11: heating, standby: actually heating or not work_state
-# 101: -5: Temperature calibration
-# 102: 115: eco temperature (x10)
-# 103: true: open window detection
-# 105: 210: Comfort temperature
-# 106: 60: AF temperature
-# 111: true: ?Limit mode?
-# 113: 0: today's energy (x10) kWh
-# 116: cancel, 1h, 2h: boost setting
-# 118: 220: boost temperature (x10)
-# 119: 118: boost time remaining (min)
-# 120: 2: energy consumption (x10) kWh
-# 121: false: ?
-
-# 4 in mapping: eco (Enum): mode -- instead of 104?
-
 name: Panel heater
 products:
   - id: ui2crhdararfq16p
@@ -40,7 +18,7 @@ entities:
       - id: 2
         name: temperature
         type: integer
-        unit: C
+        unit: ℃C
         range:
           min: 50
           max: 350
@@ -59,22 +37,13 @@ entities:
       - id: 11
         name: hvac_action
         type: string
+        readonly: true
         mapping:
           - dps_val: "standby"
             value: idle
           - dps_val: "heating"
             value: heating
-# is this right?
-      - id: 104
-        name: preset_mode
-        type: string
-        mapping:
-          - dps_val: "comfort"
-            value: comfort
-          - dps_val: "ECO"
-            value: eco
-          - dps_val: "AF"
-            value: away
+  - entity: sensor
   - entity: select
     name: Mode
     icon: "mdi:radiator"
@@ -92,6 +61,37 @@ entities:
             value: program
           - dps_val: "Limit"
             value: limit
+  - entity: lock
+    translation_key: child_lock
+    category: config
+    dps:
+      - id: 7
+        type: boolean
+        name: lock
+  - entity: switch
+    name: Sound
+    icon: "mdi:music-note"
+    category: config
+    dps:
+      - id: 8
+        type: boolean
+        name: switch
+  - entity: sensor
+    name: week_program
+    dps:
+      - id: 23
+        type: hex
+      - id: 104
+        name: preset_mode
+        type: string
+        readonly: true
+        mapping:
+          - dps_val: "comfort"
+            value: comfort
+          - dps_val: "ECO"
+            value: eco
+          - dps_val: "AF"
+            value: away
   - entity: number
     name: Temperature calibration
     category: config
@@ -121,6 +121,14 @@ entities:
         mapping:
           - scale: 10
             step: 5
+  - entity: switch
+    name: Open window detection
+    icon: "mdi:window-open-variant"
+    category: config
+    dps:
+      - id: 103
+        type: boolean
+        name: switch
   - entity: number
     name: Comfort temperature
     category: config
@@ -149,6 +157,36 @@ entities:
         mapping:
           - scale: 10
             step: 5
+  - entity: sensor
+    name: password
+    dps:
+      - id: 107
+        type: integer
+        sensitive: true
+  - entity: binary_sensor
+    name: Limit
+    category: diagnostic
+    dps:
+      - id: 111
+        name: sensor
+        type: boolean
+        mapping:
+          - dps_val: true
+            value: true
+          - dps_val: false
+            value: false
+  - entity: sensor
+    name: Energy today
+    class: energy
+    readonly: true
+    dps:
+      - id: 113
+        name: sensor
+        type: integer
+        unit: kWh
+        optional: true
+        mapping:
+          - scale: 10
   - entity: select
     translation_key: timer
     category: config
@@ -180,48 +218,16 @@ entities:
   - entity: sensor
     translation_key: time_remaining
     class: duration
+    readonly: true
     dps:
       - id: 119
         type: integer
         name: sensor
         unit: min
-  - entity: lock
-    translation_key: child_lock
-    category: config
-    dps:
-      - id: 7
-        type: boolean
-        name: lock
-  - entity: switch
-    name: Open window detection
-    icon: "mdi:window-open-variant"
-    category: config
-    dps:
-      - id: 103
-        type: boolean
-        name: switch
-  - entity: switch
-    name: Sound
-    icon: "mdi:music-note"
-    category: config
-    dps:
-      - id: 8
-        type: boolean
-        name: switch
-  - entity: sensor
-    name: Energy today
-    class: energy
-    dps:
-      - id: 113
-        name: sensor
-        type: integer
-        unit: kWh
-        optional: true
-        mapping:
-          - scale: 10
   - entity: sensor
     name: Total energy
     class: energy
+    readonly: true
     dps:
       - id: 120
         name: sensor
@@ -231,18 +237,6 @@ entities:
         optional: true
         mapping:
           - scale: 10
-  - entity: binary_sensor
-    name: Limit
-    category: diagnostic
-    dps:
-      - id: 111
-        name: sensor
-        type: boolean
-        mapping:
-          - dps_val: true
-            value: true
-          - dps_val: false
-            value: false
   - entity: button
     name: Energy reset
     category: config
