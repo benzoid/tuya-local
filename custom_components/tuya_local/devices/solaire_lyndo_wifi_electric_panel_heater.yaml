@@ -37,7 +37,6 @@ entities:
       - id: 11
         name: hvac_action
         type: string
-        readonly: true
         mapping:
           - dps_val: "standby"
             value: idle
@@ -77,10 +76,8 @@ entities:
         type: boolean
         name: switch
   - entity: sensor
-    name: week_program
+    name: preset_mode
     dps:
-      - id: 23
-        type: hex
       - id: 104
         name: preset_mode
         type: string
