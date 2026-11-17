@@ -18,7 +18,7 @@ entities:
       - id: 2
         name: temperature
         type: integer
-        unit: ℃C
+        unit: C
         range:
           min: 50
           max: 350
@@ -43,7 +43,7 @@ entities:
             value: idle
           - dps_val: "heating"
             value: heating
-  - entity: sensor
+#  - entity: sensor
   - entity: select
     name: Mode
     icon: "mdi:radiator"
